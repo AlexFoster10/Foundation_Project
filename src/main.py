@@ -1,4 +1,4 @@
-import validate, ingest, processing
+import validate, ingest, processing, output
 import pandas as pd
 
 
@@ -9,7 +9,7 @@ def main():
     df = processing.price_spread(df)
     #df = processing.simple_moving_average(df,5)
     df = processing.volume_change(df)
-    print(df)
+    output.output_csv(df)
 
 
 if __name__ == "__main__":
