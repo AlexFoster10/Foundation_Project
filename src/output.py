@@ -1,8 +1,10 @@
 import pandas as pd
 import logging
+from logging_config import main_logger
+import logging_config
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='./tests/logs/output.log', filemode='w')   
 
+logger = logging_config.setup_logger('output_logger', './tests/logs/output.log')
 def output_csv(df, path="./data/processed/processed_data.csv"):
 
     if not path:
@@ -11,7 +13,8 @@ def output_csv(df, path="./data/processed/processed_data.csv"):
     try:
         df.to_csv(path)
     except Exception as e:
-        logging.error(f"Error outputting CSV file: {e}")
+        logger.error(f"Error outputting CSV file: {e}")
+        main_logger.error(f"Error outputting CSV file: {e}")
 
 
 

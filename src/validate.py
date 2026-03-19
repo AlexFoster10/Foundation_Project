@@ -1,8 +1,11 @@
 import pandas as pd
 import logging
+import logging_config
+from logging_config import main_logger
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='./tests/logs/validate.log', filemode='w')
-   
+
+logger = logging_config.setup_logger('validate_logger', './tests/logs/validate.log')
+
 
 def clean_df(df):
 
@@ -13,7 +16,8 @@ def clean_df(df):
         
         df = df.dropna()
     except Exception as e:
-        logging.info(f"na values could not be removed from DataFrame: {e}")
+        logger.info(f"na values could not be removed from DataFrame: {e}")
+        main_logger.info(f"na values could not be removed from DataFrame: {e}")
 
     #drop all rows where data is not numeric, i.e. where high, low, open or close is not a number
     try:
@@ -26,7 +30,8 @@ def clean_df(df):
         numericized = True
 
     except Exception as e:
-        logging.info(f"Non-numeric values could not be removed from DataFrame: {e}")
+        logger.info(f"Non-numeric values could not be removed from DataFrame: {e}")
+        main_logger.info(f"Non-numeric values could not be removed from DataFrame: {e}")
 
 
     #drop all rows where logic doesn't work, i.e. where high is less than low
@@ -47,11 +52,13 @@ def clean_df(df):
         df['trade_date'] = pd.to_datetime(df['trade_date'], format='%Y-%m-%d', errors='coerce')
         df = df.dropna(subset=['trade_date'])
     except Exception as e:
-        logging.info(f"Invalid date format could not be removed from DataFrame: {e}")
+        logger.info(f"Invalid date format could not be removed from DataFrame: {e}")
+        main_logger.info(f"Invalid date format could not be removed from DataFrame: {e}")
 
     #log dropped rows
     dropped_rows = df_orig[~df_orig.index.isin(df.index)]
-    logging.info(f"Dropped rows due to invalid data:\n{dropped_rows}")
+    logger.info(f"Dropped rows due to invalid data:\n{dropped_rows}")
+    main_logger.info(f"Dropped rows due to invalid data:\n{dropped_rows}")
 
     df = df.sort_values(by=['ticker', 'trade_date'])
 
