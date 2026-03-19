@@ -1,9 +1,10 @@
-import validate
+import validate, ingest
+import pandas as pd
 
 
 def main():
-    validate.validate_csv("./data/raw/marketData.csv")
-    validate.clean_df("./data/raw/marketData.csv")
+    df = ingest.ingest_csv("./data/raw/marketData.csv")
+    df = validate.clean_df(df)
 
 
 if __name__ == "__main__":

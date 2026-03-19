@@ -2,24 +2,15 @@ import pandas as pd
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='./tests/logs/validate.log', filemode='w')
+   
 
-def validate_csv(file_path):
-    try:
-        df = pd.read_csv(file_path)
-        return True
-    except Exception as e:
-        logging.error(f"Error validating CSV file: {e}")
-        return False
-    
-
-def clean_df(filepath):
+def clean_df(df):
 
     numericized = False
-
+    df_orig = df.copy()
     #drop all na values from the dataframe, if any
     try:
-        df = pd.read_csv(filepath)
-        df_orig = pd.read_csv(filepath)
+        
         df = df.dropna()
     except Exception as e:
         logging.info(f"na values could not be removed from DataFrame: {e}")
@@ -63,6 +54,8 @@ def clean_df(filepath):
     logging.info(f"Dropped rows due to invalid data:\n{dropped_rows}")
 
     print(df)
+
+    return df
         
 
     
