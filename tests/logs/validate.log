@@ -1,4 +1,4 @@
-2026-03-19 14:48:02,020 - INFO - Dropped rows due to invalid data:
+2026-03-19 15:13:48,623 - INFO - Dropped rows due to invalid data:
    ticker  trade_date   open   high    low  close    volume
 0    AAPL  2024-01-02  185.2  184.0  187.5  186.3  52000000
 4      BP  2024-01-02  505.4  507.1  502.0    NaN  11000000

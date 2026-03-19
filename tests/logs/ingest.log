@@ -1,1 +1,1 @@
-2026-03-19 14:48:02,004 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: './data/raw/magfdrketData2.csv'
+2026-03-19 15:13:48,605 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: './data/raw/magfdrketData2.csv'

@@ -1,8 +1,8 @@
-2026-03-19 14:48:02,004 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: './data/raw/magfdrketData2.csv'
-2026-03-19 14:48:02,008 - INFO - Successfully dropped NA values from DataFrame
-2026-03-19 14:48:02,009 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
-2026-03-19 14:48:02,013 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
-2026-03-19 14:48:02,026 - INFO - Dropped rows due to invalid data:
+2026-03-19 15:13:48,607 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: './data/raw/magfdrketData2.csv'
+2026-03-19 15:13:48,609 - INFO - Successfully dropped NA values from DataFrame
+2026-03-19 15:13:48,612 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-19 15:13:48,616 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-19 15:13:48,628 - INFO - Dropped rows due to invalid data:
    ticker  trade_date   open   high    low  close    volume
 0    AAPL  2024-01-02  185.2  184.0  187.5  186.3  52000000
 4      BP  2024-01-02  505.4  507.1  502.0    NaN  11000000
@@ -12,7 +12,7 @@
 8     NaN  2024-01-02  158.2  160.0  157.9  159.5  15000000
 9    MSFT  2024-01-02  370.1  Hello  369.2  371.6  24000000
 10   MSFT  2024-26-90  370.1  372.4  369.2  371.6  24000000
-2026-03-19 14:48:02,028 - INFO - Successfully calculated daily return
-2026-03-19 14:48:02,028 - INFO - Successfully calculated price spread
-2026-03-19 14:48:02,029 - INFO - Successfully calculated volume change
-2026-03-19 14:48:02,032 - INFO - Successfully output CSV file: ./data/processed/gfdprocessed_data.csv
+2026-03-19 15:13:48,630 - INFO - Successfully calculated daily return
+2026-03-19 15:13:48,630 - INFO - Successfully calculated price spread
+2026-03-19 15:13:48,631 - INFO - Successfully calculated volume change
+2026-03-19 15:13:48,634 - INFO - Successfully output CSV file: ./data/processed/processed_data.csv
