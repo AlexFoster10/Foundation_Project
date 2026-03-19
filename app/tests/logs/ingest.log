@@ -1,0 +1,1 @@
+2026-03-19 17:37:34,927 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/nonexistent.csv'

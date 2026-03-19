@@ -4,7 +4,7 @@ from . import  logging_config
 from  .logging_config import main_logger
 
 
-logger =  logging_config.setup_logger('validate_logger', './tests/logs/validate.log')
+logger =  logging_config.setup_logger('validate_logger', 'app/tests/logs/validate.log')
 
 
 def clean_df(df):

@@ -1,4 +1,8 @@
-2026-03-19 17:14:46,475 - INFO - Dropped rows due to invalid data:
+2026-03-19 17:37:07,674 - INFO - Successfully ingested CSV file: app/data/raw/marketData2.csv
+2026-03-19 17:37:07,675 - INFO - Successfully dropped NA values from DataFrame
+2026-03-19 17:37:07,676 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-19 17:37:07,680 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-19 17:37:07,698 - INFO - Dropped rows due to invalid data:
    ticker  trade_date   open   high    low  close      volume
 1    AAPL  03-01-2024  187.5  191.2  186.1  190.8    61000000
 2    AAPL  2024/01/04  191.0  193.5  188.7  189.2    58000000
@@ -21,3 +25,9 @@
 43     BP  2024-01-05  511.5  518.2  509.0    NaN    11500000
 44     BP  2024-01-08  510.8  522.5  508.3  520.9         NaN
 47     BP  2024-01-11  522.0  525.0  518.8  524.1         ???
+2026-03-19 17:37:07,700 - INFO - Successfully calculated daily return
+2026-03-19 17:37:07,700 - INFO - Successfully calculated price spread
+2026-03-19 17:37:07,701 - INFO - Successfully calculated volume change
+2026-03-19 17:37:07,703 - INFO - Successfully output CSV file: app/data/processed/processed_data.csv
+2026-03-19 17:37:34,927 - INFO - Successfully ingested CSV file: app/data/raw/marketData2.csv
+2026-03-19 17:37:34,927 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/nonexistent.csv'
