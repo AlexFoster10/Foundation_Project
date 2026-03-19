@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='validate.log', filemode='w')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='./tests/logs/validate.log', filemode='w')
 
 def validate_csv(file_path):
     try:
@@ -13,6 +13,8 @@ def validate_csv(file_path):
     
 
 def clean_df(filepath):
+
+    numericized = False
 
     #drop all na values from the dataframe, if any
     try:
@@ -30,20 +32,23 @@ def clean_df(filepath):
         df['close'] = pd.to_numeric(df['close'], errors='coerce')
         df['volume'] = pd.to_numeric(df['volume'], errors='coerce')
         df = df.dropna(subset=['high', 'low', 'open', 'close', 'volume'])
+        numericized = True
+
     except Exception as e:
         logging.info(f"Non-numeric values could not be removed from DataFrame: {e}")
 
 
     #drop all rows where logic doesn't work, i.e. where high is less than low
-    df = df[df['high'] >= df['low']]
-    df = df[df['high'] >= df['open']]
-    df = df[df['high'] >= df['close']]
-    df = df[df['high'] > 0]
-    df = df[df['low'] <= df['open']]
-    df = df[df['low'] <= df['close']]
-    df = df[df['low'] > 0]
-    df = df[df['open'] > 0]
-    df = df[df['close'] > 0]
+    if numericized:
+        df = df[df['high'] >= df['low']]
+        df = df[df['high'] >= df['open']]
+        df = df[df['high'] >= df['close']]
+        df = df[df['high'] > 0]
+        df = df[df['low'] <= df['open']]
+        df = df[df['low'] <= df['close']]
+        df = df[df['low'] > 0]
+        df = df[df['open'] > 0]
+        df = df[df['close'] > 0]
 
 
     #drop rows where date time format is not correct
