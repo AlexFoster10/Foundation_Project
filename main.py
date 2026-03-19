@@ -1,4 +1,4 @@
-from src import validate,  ingest,  processing,  output
+from app.src import validate,  ingest,  processing,  output
 import pandas as pd
 import logging
 
