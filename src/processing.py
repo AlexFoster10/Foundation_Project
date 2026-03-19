@@ -9,6 +9,7 @@ logger = logging_config.setup_logger('processing_logger', './tests/logs/processi
 def daily_return(df):
     try:
         df['daily_return'] = (df['close'] - df['open']) / df['open']
+        main_logger.info("Successfully calculated daily return")
         return df
     except Exception as e:
         logger.error(f"Error calculating daily return: {e}")
@@ -19,6 +20,7 @@ def daily_return(df):
 def price_spread(df):
     try:
         df['price_spread'] = df['high'] - df['low']
+        main_logger.info("Successfully calculated price spread")
         return df
     except Exception as e:
         logger.error(f"Error calculating price spread: {e}")
@@ -42,6 +44,7 @@ def volume_change(df):
     try:
         groups = df.groupby('ticker')
         df['volume_change'] = groups['volume'].pct_change()
+        main_logger.info("Successfully calculated volume change")
         return df
     except Exception as e:
         logger.error(f"Error calculating volume change: {e}")

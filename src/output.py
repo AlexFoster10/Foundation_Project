@@ -12,6 +12,7 @@ def output_csv(df, path="./data/processed/processed_data.csv"):
 
     try:
         df.to_csv(path)
+        main_logger.info(f"Successfully output CSV file: {path}")
     except Exception as e:
         logger.error(f"Error outputting CSV file: {e}")
         main_logger.error(f"Error outputting CSV file: {e}")

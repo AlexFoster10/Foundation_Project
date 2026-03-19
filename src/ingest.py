@@ -12,6 +12,7 @@ def ingest_csv(path="./data/raw/marketData2.csv"):
         path = input("Enter the path to the CSV file to ingest (default: ./data/raw/marketData2.csv): ")
     try:
         df = pd.read_csv(path)
+        main_logger.info(f"Successfully ingested CSV file: {path}")
         return df
     except Exception as e:
         logger.error(f"Error ingesting CSV file, defualt generated: {e}")

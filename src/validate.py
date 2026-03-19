@@ -8,13 +8,13 @@ logger = logging_config.setup_logger('validate_logger', './tests/logs/validate.l
 
 
 def clean_df(df):
-
     numericized = False
     df_orig = df
     #drop all na values from the dataframe, if any
     try:
         
         df = df.dropna()
+        main_logger.info("Successfully dropped NA values from DataFrame")
     except Exception as e:
         logger.info(f"na values could not be removed from DataFrame: {e}")
         main_logger.info(f"na values could not be removed from DataFrame: {e}")
@@ -28,6 +28,8 @@ def clean_df(df):
         df.loc[:, 'volume'] = pd.to_numeric(df['volume'], errors='coerce')
         df = df.dropna(subset=['high', 'low', 'open', 'close', 'volume'])
         numericized = True
+
+        main_logger.info("Successfully converted high, low, open, close and volume columns to numeric values")
 
     except Exception as e:
         logger.info(f"Non-numeric values could not be removed from DataFrame: {e}")
@@ -51,6 +53,7 @@ def clean_df(df):
     try:
         df['trade_date'] = pd.to_datetime(df['trade_date'], format='%Y-%m-%d', errors='coerce')
         df = df.dropna(subset=['trade_date'])
+        main_logger.info("Successfully converted trade_date column to datetime format and dropped invalid dates")
     except Exception as e:
         logger.info(f"Invalid date format could not be removed from DataFrame: {e}")
         main_logger.info(f"Invalid date format could not be removed from DataFrame: {e}")
