@@ -2,6 +2,7 @@ import validate, ingest, processing, output
 import pandas as pd
 
 
+
 def main():
     df = ingest.ingest_csv("./data/raw/marketData2.csv")
     df = validate.clean_df(df)
