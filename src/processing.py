@@ -22,4 +22,23 @@ def price_spread(df):
         df['price_spread'] = np.nan
         return df
 
-def 
+
+##not finished yet dont fully understand SMA
+def simple_moving_average(df, window):
+    try:
+        df['simple_moving_average'] = df['close'].rolling(window=window).mean()
+        return df
+    except Exception as e:
+        logging.error(f"Error calculating simple moving average: {e}")
+        df['simple_moving_average'] = np.nan
+        return df
+    
+def volume_change(df):
+    try:
+        groups = df.groupby('ticker')
+        df['volume_change'] = groups['volume'].pct_change()
+        return df
+    except Exception as e:
+        logging.error(f"Error calculating volume change: {e}")
+        df['volume_change'] = np.nan
+        return df

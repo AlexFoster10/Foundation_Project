@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 def clean_df(df):
 
     numericized = False
-    df_orig = df.copy()
+    df_orig = df
     #drop all na values from the dataframe, if any
     try:
         
@@ -17,11 +17,11 @@ def clean_df(df):
 
     #drop all rows where data is not numeric, i.e. where high, low, open or close is not a number
     try:
-        df['high'] = pd.to_numeric(df['high'], errors='coerce')
-        df['low'] = pd.to_numeric(df['low'], errors='coerce')
-        df['open'] = pd.to_numeric(df['open'], errors='coerce')
-        df['close'] = pd.to_numeric(df['close'], errors='coerce')
-        df['volume'] = pd.to_numeric(df['volume'], errors='coerce')
+        df.loc[:, 'high'] = pd.to_numeric(df['high'], errors='coerce')
+        df.loc[:, 'low'] = pd.to_numeric(df['low'], errors='coerce')
+        df.loc[:, 'open'] = pd.to_numeric(df['open'], errors='coerce')
+        df.loc[:, 'close'] = pd.to_numeric(df['close'], errors='coerce')
+        df.loc[:, 'volume'] = pd.to_numeric(df['volume'], errors='coerce')
         df = df.dropna(subset=['high', 'low', 'open', 'close', 'volume'])
         numericized = True
 
@@ -53,7 +53,7 @@ def clean_df(df):
     dropped_rows = df_orig[~df_orig.index.isin(df.index)]
     logging.info(f"Dropped rows due to invalid data:\n{dropped_rows}")
 
-    print(df)
+    df = df.sort_values(by=['ticker', 'trade_date'])
 
     return df
         
