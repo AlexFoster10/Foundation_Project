@@ -7,37 +7,41 @@ import unittest
 from app.src import processing
 import pandas as pd
 
-data = {
-    'ticker': [
-        'AAPL','MSFT','BARC','HSBC','BP','HSBC','HSBC','HSBC',
-        None,'MSFT','MSFT','MSFT','MSFT'
-    ],
-    'trade_date': [
-        '2024-01-02','2024-01-02','2024-01-02','2024-01-02','2024-01-02',
-        '2024-01-02','2024-01-02','2024-01-02','2024-01-02','2024-01-02',
-        '2024-26-90','2024-01-03','2024-01-04'
-    ],
-    'open': [
-        185.2,370.1,158.2,645.5,505.4,100,100,100,158.2,370.1,370.1,370.1,370.1
-    ],
-    'high': [
-        184.0,372.4,160.0,648.2,507.1,648.2,0,648.2,160.0,'Hello',372.4,372.4,372.4
-    ],
-    'low': [
-        187.5,369.2,157.9,640.3,502.0,640.3,640.3,0,157.9,369.2,369.2,369.2,369.2
-    ],
-    'close': [
-        186.3,371.6,159.5,646.9,None,646.9,646.9,646.9,159.5,371.6,371.6,371.6,371.6
-    ],
-    'volume': [
-        52000000,24000000,15000000,9800000,11000000,9800000,9800000,9800000,
-        15000000,24000000,24000000,24000000,24000000
-    ]
-}
+
+
+df = pd.read_csv("app/tests/test_data/clean_test_data_large.csv")
 
 class TestProcessing(unittest.TestCase):
-    def test_processing(self):
-        df = pd.DataFrame(data)
-        
-        
 
+    def test_daily_return(self):
+        result_df = processing.daily_return(df)
+
+        for index, row in df.iterrows():
+            expected_return = (row['close'] - row['open']) / row['open']
+            self.assertAlmostEqual(result_df.loc[index, 'daily_return'], expected_return)
+
+    def test_price_spread(self):
+        result_df = processing.price_spread(df)
+
+        for index, row in df.iterrows():
+            expected_spread = row['high'] - row['low']
+            self.assertAlmostEqual(result_df.loc[index, 'price_spread'], expected_spread)
+
+    def test_volume_change(self):
+        result_df = processing.volume_change(df)
+
+        for index, row in df.iterrows():
+            if index == 0:
+                expected_change = None
+            elif row['ticker'] != df.loc[index - 1, 'ticker']:
+                expected_change = None
+            else:
+                expected_change = (row['volume'] - df.loc[index - 1, 'volume']) / df.loc[index - 1, 'volume']
+            if expected_change is None:
+                self.assertTrue(pd.isna(result_df.loc[index, 'volume_change']))
+            else:
+                self.assertAlmostEqual(result_df.loc[index, 'volume_change'], expected_change)
+
+        
+if __name__ == '__main__':
+    unittest.main() 
