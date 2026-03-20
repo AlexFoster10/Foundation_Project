@@ -10,12 +10,12 @@ def output_csv(df, path="app/data/processed/processed_data.csv"):
         path = input("Enter the path to save the output CSV file (default: app/data/processed/processed_data.csv): ")
 
     try:
-        df.to_csv(path)
+        df.to_csv(path, index=False)
         main_logger.info(f"Successfully output CSV file: {path}")
     except Exception as e:
         logger.error(f"Error outputting CSV file, default destination used: {e}")
         main_logger.error(f"Error outputting CSV file, default destination used: {e}")
-        df.to_csv("app/data/processed/processed_data_def.csv")
+        df.to_csv("app/data/processed/processed_data_def.csv", index=False)
 
 
 
