@@ -13,7 +13,6 @@ df = pd.DataFrame(data)
 class TestOutput(unittest.TestCase):
     
     def test_output_csv(self):
-        # Create a sample DataFrame
         
         # Test output_csv function
         output.output_csv(df, "app/tests/test_data/test_output.csv")

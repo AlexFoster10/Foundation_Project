@@ -32,3 +32,150 @@
 2026-03-20 17:05:41,543 - INFO - Successfully calculated daily return
 2026-03-20 17:05:41,546 - INFO - Successfully calculated price spread
 2026-03-20 17:05:41,549 - INFO - Successfully calculated volume change
+2026-03-20 17:16:32,776 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:16:32,778 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:16:32,780 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:16:32,791 - INFO - Dropped rows due to invalid data:
+  ticker trade_date   open   high    low  close    volume
+0   BARC 2024-01-02    0.0  160.0  157.9  159.5  15000000
+1   HSBC 2024-01-02  645.5    0.0  640.3  646.9   9800000
+2   MSFT 2024-01-02  370.1  372.4    0.0  371.6  24000000
+3   MSFT 2024-01-03  370.1  372.4  369.2    0.0  24000000
+2026-03-20 17:17:29,173 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:17:29,175 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:17:29,178 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:17:29,189 - INFO - Dropped rows due to invalid data:
+  ticker trade_date   open   high    low  close    volume
+0   BARC 2024-01-02    0.0  160.0  157.9  159.5  15000000
+1   HSBC 2024-01-02  645.5    0.0  640.3  646.9   9800000
+2   MSFT 2024-01-02  370.1  372.4    0.0  371.6  24000000
+3   MSFT 2024-01-03  370.1  372.4  369.2    0.0  24000000
+2026-03-20 17:21:17,963 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:21:17,965 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:21:17,968 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:21:17,980 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:21:54,601 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:21:54,602 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:21:54,605 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:21:54,617 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:22:10,851 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:22:10,853 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:22:10,856 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:22:10,869 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:22:50,585 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:22:50,588 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:22:50,591 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:22:50,602 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:23:24,045 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:23:24,048 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:23:24,052 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:23:24,067 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:25:12,839 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:25:12,841 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:25:12,845 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:25:12,859 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:26:19,014 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:26:19,016 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:26:19,019 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:26:19,031 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:26:33,510 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:26:33,511 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:26:33,514 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:26:33,526 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:26:39,808 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:26:39,811 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:26:39,813 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:26:39,825 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0
+2026-03-20 17:27:06,607 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/nonexistent.csv'
+2026-03-20 17:27:06,611 - INFO - Successfully ingested CSV file: app/data/raw/marketData2.csv
+2026-03-20 17:27:12,899 - INFO - Successfully output CSV file: app/tests/test_data/test_output.csv
+2026-03-20 17:27:25,630 - INFO - Successfully calculated daily return
+2026-03-20 17:27:25,633 - INFO - Successfully calculated price spread
+2026-03-20 17:27:25,636 - INFO - Successfully calculated volume change
+2026-03-20 17:28:19,584 - INFO - Successfully calculated daily return
+2026-03-20 17:28:19,586 - INFO - Successfully calculated price spread
+2026-03-20 17:28:19,589 - INFO - Successfully calculated volume change
+2026-03-20 17:28:49,785 - INFO - Successfully dropped NA values from DataFrame
+2026-03-20 17:28:49,786 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-03-20 17:28:49,789 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-03-20 17:28:49,801 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0

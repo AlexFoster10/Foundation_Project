@@ -46,6 +46,7 @@ def clean_df(df):
         df = df[df['low'] > 0]
         df = df[df['open'] > 0]
         df = df[df['close'] > 0]
+        df = df[df['volume'] > 0]
 
 
     #drop rows where date time format is not correct
