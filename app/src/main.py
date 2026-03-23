@@ -24,14 +24,23 @@ main_logger = setup_logger('main_logger', 'app/tests/logs/main.log')
 def main():
 
     # Ingest, validate, process, and output data
-    df =  ingest.ingest_csv("app/data/raw/marketData2.csv")
+
+    if len(sys.argv) > 1:
+        df =  ingest.ingest_csv(sys.argv[1])
+    else:
+        df =  ingest.ingest_csv()
+
     df =  validate.clean_df(df)
     pf = df.copy()
     df =  processing.daily_return(df)
     df =  processing.price_spread(df)
     df = processing.simple_moving_average(df,3)
     df =  processing.volume_change(df)
-    output.output_csv(df,"app/data/processed/processed_data.csv")
+
+    if len(sys.argv) > 2:
+        output.output_csv(df, sys.argv[2])
+    else:
+        output.output_csv(df)
 
 
     # Plotting graph

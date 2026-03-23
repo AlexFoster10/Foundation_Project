@@ -9,13 +9,14 @@ with open("config.yaml", "r") as f:
 
 
 logger =  logging_config.setup_logger('output_logger', 'app/tests/logs/output.log')
-def output_csv(df, path=config['default_csv_path_out']):
+def output_csv(df, path="placeholder"):
 
-    if not path:
+    if path == "placeholder":
         path = input("Enter the path to save the output CSV file (default: app/data/processed/processed_data.csv): ")
 
     try:
         df.to_csv(path, index=False)
+        logger.info(f"Successfully output CSV file: {path}")
         main_logger.info(f"Successfully output CSV file: {path}")
     except Exception as e:
         logger.error(f"Error outputting CSV file, default destination used: {e}")

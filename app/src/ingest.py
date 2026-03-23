@@ -8,12 +8,13 @@ with open("config.yaml", "r") as f:
 
 logger =  logging_config.setup_logger('ingest_logger', 'app/tests/logs/ingest.log')
 
-def ingest_csv(path=config['default_csv_path_in']):
+def ingest_csv(path="placeholder"):
 
-    if not path:
+    if path == "placeholder":
         path = input("Enter the path to the CSV file to ingest (default: app/data/raw/marketData2.csv): ")
     try:
         df = pd.read_csv(path)
+        logger.info(f"Successfully ingested CSV file: {path}")
         main_logger.info(f"Successfully ingested CSV file: {path}")
         return df
     except Exception as e:
