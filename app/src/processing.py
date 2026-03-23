@@ -13,7 +13,7 @@ def daily_return(df):
         return df
     except Exception as e:
         logger.error(f"Error calculating daily return: {e}")
-        #main_logger.error(f"Error calculating daily return: {e}")
+        main_logger.error(f"Error calculating daily return: {e}")
         df['daily_return'] = np.nan
         return df
     
@@ -24,7 +24,7 @@ def price_spread(df):
         return df
     except Exception as e:
         logger.error(f"Error calculating price spread: {e}")
-        #main_logger.error(f"Error calculating price spread: {e}")
+        main_logger.error(f"Error calculating price spread: {e}")
         df['price_spread'] = np.nan
         return df
 
@@ -32,11 +32,11 @@ def price_spread(df):
 ##not finished yet dont fully understand SMA
 def simple_moving_average(df, window):
     try:
-        df['simple_moving_average'] = df['close'].rolling(window=window).mean()
+        df['simple_moving_average'] = df.groupby('ticker')['close'].rolling(window=window).mean().reset_index(0, drop=True)
         return df
     except Exception as e:
         logger.error(f"Error calculating simple moving average: {e}")
-        #main_logger.error(f"Error calculating simple moving average: {e}")
+        main_logger.error(f"Error calculating simple moving average: {e}")
         df['simple_moving_average'] = np.nan
         return df
     
@@ -48,6 +48,6 @@ def volume_change(df):
         return df
     except Exception as e:
         logger.error(f"Error calculating volume change: {e}")
-        #main_logger.error(f"Error calculating volume change: {e}")
+        main_logger.error(f"Error calculating volume change: {e}")
         df['volume_change'] = np.nan
         return df

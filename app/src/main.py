@@ -29,7 +29,7 @@ def main():
     pf = df.copy()
     df =  processing.daily_return(df)
     df =  processing.price_spread(df)
-    #df = processing.simple_moving_average(df,5)
+    df = processing.simple_moving_average(df,3)
     df =  processing.volume_change(df)
     output.output_csv(df,"app/data/processed/processed_data.csv")
 
@@ -44,7 +44,7 @@ def main():
     plt.xticks(rotation=20)
     plt.savefig("app/data/plots/processed_data.png")
 
-    database.append_to_table(df)
+    database.create_new_table(df)
 
 
 
