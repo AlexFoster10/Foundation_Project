@@ -1,2 +1,3 @@
 /.foundationProject
-/app/tests/logs
+app/tests/logs/*
+!app/tests/logs/.gitkeep
