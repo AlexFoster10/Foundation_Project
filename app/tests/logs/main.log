@@ -29,3 +29,21 @@
 2026-04-01 16:27:28,251 - INFO - Successfully calculated price spread
 2026-04-01 16:27:28,252 - INFO - Successfully calculated volume change
 2026-04-01 16:27:28,255 - INFO - Successfully output CSV file: testOut.csv
+2026-04-01 16:27:55,756 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/nonexistent.csv'
+2026-04-01 16:27:55,759 - INFO - Successfully ingested CSV file: app/data/raw/marketData2.csv
+2026-04-01 16:28:06,464 - INFO - Successfully output CSV file: app/tests/test_data/test_output.csv
+2026-04-01 16:28:10,223 - INFO - Successfully calculated daily return
+2026-04-01 16:28:10,226 - INFO - Successfully calculated price spread
+2026-04-01 16:28:10,236 - INFO - Successfully calculated volume change
+2026-04-01 16:28:13,967 - INFO - Successfully dropped NA values from DataFrame
+2026-04-01 16:28:13,970 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-04-01 16:28:13,973 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-04-01 16:28:13,985 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close    volume
+5     NaN  2024-01-04  370.1  372.4  369.2  371.6  24000000
+6    MSFT         NaN  370.1  372.4  369.2  371.6  24000000
+7    MSFT  2024-01-04    NaN  372.4  369.2  371.6  24000000
+8    MSFT  2024-01-04  370.1    NaN  369.2  371.6  24000000
+9    MSFT  2024-01-04  370.1  372.4    NaN  371.6  24000000
+10   MSFT  2024-01-04  370.1  372.4  369.2    NaN  24000000
+11   MSFT  2024-01-04  370.1  372.4  369.2  371.6         0

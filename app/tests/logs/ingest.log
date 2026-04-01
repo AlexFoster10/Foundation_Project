@@ -1,1 +1,2 @@
-2026-04-01 16:27:28,222 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/markData2.csv'
+2026-04-01 16:27:55,755 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: 'app/data/raw/nonexistent.csv'
+2026-04-01 16:27:55,759 - INFO - Successfully ingested CSV file: app/data/raw/marketData2.csv
