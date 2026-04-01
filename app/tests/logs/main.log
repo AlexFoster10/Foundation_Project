@@ -1,0 +1,31 @@
+2026-04-01 16:30:42,630 - ERROR - Error ingesting CSV file, default used: [Errno 2] No such file or directory: ''
+2026-04-01 16:30:42,634 - INFO - Successfully dropped NA values from DataFrame
+2026-04-01 16:30:42,637 - INFO - Successfully converted high, low, open, close and volume columns to numeric values
+2026-04-01 16:30:42,641 - INFO - Successfully converted trade_date column to datetime format and dropped invalid dates
+2026-04-01 16:30:42,661 - INFO - Dropped rows due to invalid data:
+   ticker  trade_date   open   high    low  close      volume
+1    AAPL  03-01-2024  187.5  191.2  186.1  190.8    61000000
+2    AAPL  2024/01/04  191.0  193.5  188.7  189.2    58000000
+3    AAPL  2024-01-05  189.0  192.0  187.5    NaN    57000000
+4    AAPL  2024-01-08  188.5  194.8  187.9  193.6         NaN
+5    AAPL  2024-13-09  194.0  196.5  192.8  195.7    60000000
+7    AAPL  2024-01-11  191.0  193.2  189.0  192.6         abc
+11   MSFT  2024/01/03  372.0  378.5  370.8  377.9    26000000
+12   MSFT  04-01-2024  378.2  382.0  375.5  376.1    25500000
+13   MSFT  2024-01-05  376.0  380.4  374.2    NaN    25000000
+14   MSFT  2024-01-08  375.5  383.2  373.9  381.7         NaN
+17   MSFT  2024-01-11  380.0  382.5  377.8  381.2  notanumber
+23   BARC  2024-01-05  163.0  167.5  161.0    NaN    16000000
+24   BARC  2024-01-08  162.5  169.8  160.9  168.7         NaN
+27   BARC  2024-01-11  169.5  171.0  165.8  166.4       error
+33   HSBC  2024-01-05  650.8  658.0  648.2    NaN    10000000
+34   HSBC  2024-01-08  649.5  662.3  647.0  660.5         NaN
+37   HSBC  2024-01-11  662.0  665.2  658.8  664.3         NaN
+39   HSBC  15/01/2024  669.0  675.0  667.5  673.6    11200000
+43     BP  2024-01-05  511.5  518.2  509.0    NaN    11500000
+44     BP  2024-01-08  510.8  522.5  508.3  520.9         NaN
+47     BP  2024-01-11  522.0  525.0  518.8  524.1         ???
+2026-04-01 16:30:42,662 - INFO - Successfully calculated daily return
+2026-04-01 16:30:42,662 - INFO - Successfully calculated price spread
+2026-04-01 16:30:42,665 - INFO - Successfully calculated volume change
+2026-04-01 16:30:43,021 - ERROR - Error outputting CSV file, default destination used: [Errno 2] No such file or directory: ''
