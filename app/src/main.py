@@ -35,7 +35,6 @@ def main():
 
     # Fully process the data and add new columns for each processing step, if there is an error in any step log the error and continue with the next steps, filling in any missing values with NaN
     df =  validate.clean_df(df)
-    pf = df.copy()
     df =  processing.daily_return(df)
     df =  processing.price_spread(df)
     df = processing.simple_moving_average(df,3)
