@@ -1,9 +1,14 @@
 import pandas as pd
 from . import  logging_config
 from  .logging_config import main_logger
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+log_path = os.path.join(BASE_DIR, "app", "tests", "logs", "validate.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
 
 
-logger =  logging_config.setup_logger('validate_logger', 'app/tests/logs/validate.log')
+logger =  logging_config.setup_logger('validate_logger', log_path)
 
 
 def clean_df(df):
